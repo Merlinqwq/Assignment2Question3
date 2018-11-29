@@ -43,15 +43,16 @@ public class PatientsBill {
                 TVBill=0;
                 if(Nurse=='S'){ NurseBill=Days*NursePriceS; }
                 else if(Nurse=='N'){NurseBill=Days*NursePriceN;}
+                else if(Nurse=='X'){NurseBill=0;}
             }
             else{
-            if(RoomType=='P'){RoomBill=Days*RoomPriceP;}
-            if(RoomType=='D'){RoomBill=Days*RoomPriceD;}
-            NurseBill=0;
-            if(Phone=='T'){PhoneBill=Days*PhonePrice;}
-            else{PhoneBill=0;}
-            if(TV=='V'){TVBill=Days*TVPrice;}
-            else{TVBill=0;}
+                if(RoomType=='P'){RoomBill=Days*RoomPriceP;}
+                else{RoomBill=Days*RoomPriceD;}
+                NurseBill=0;
+                if(Phone=='T'){PhoneBill=Days*PhonePrice;}
+                else{PhoneBill=0;}
+                if(TV=='V'){TVBill=Days*TVPrice;}
+                else{TVBill=0;}
             }
             TotalBill=RoomBill+NurseBill+TVBill+PhoneBill;
             strin=BR.readLine();
